@@ -2,6 +2,7 @@
 
 import { getData } from "./utils/getData";
 import { title } from "./utils/title";
+import "./utils/Array";
 
 // part 1
 const part1 = async (data: string) => {};
