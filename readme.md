@@ -17,3 +17,4 @@ Advent of Code is an Advent calendar of small programming puzzles for a variety 
 
     npm run start:day-01
     npm run start:day-02
+    npm run start:day-03
