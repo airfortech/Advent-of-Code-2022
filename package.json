@@ -5,7 +5,15 @@
   "main": "index.js",
   "scripts": {
     "start:day-01": "ts-node ./src/day-01.ts",
-    "start:day-02": "ts-node ./src/day-02.ts"
+    "start:day-02": "ts-node ./src/day-02.ts",
+    "start:day-03": "ts-node ./src/day-03.ts",
+    "start:day-04": "ts-node ./src/day-04.ts",
+    "start:day-05": "ts-node ./src/day-05.ts",
+    "start:day-06": "ts-node ./src/day-06.ts",
+    "start:day-07": "ts-node ./src/day-07.ts",
+    "start:day-08": "ts-node ./src/day-08.ts",
+    "start:day-09": "ts-node ./src/day-09.ts",
+    "start:day-10": "ts-node ./src/day-10.ts"
   },
   "author": "",
   "license": "ISC",
