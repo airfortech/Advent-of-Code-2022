@@ -7,7 +7,7 @@ import "./utils/Array";
 // part 1
 const part1 = async (data: string) => {
   return data
-    .split("\r\n")
+    .split("\n")
     .map(line => {
       const length = line.length;
       const first = line.slice(0, length / 2);
@@ -24,7 +24,7 @@ const part1 = async (data: string) => {
 // part 2
 const part2 = async (data: string) => {
   return data
-    .split("\r\n")
+    .split("\n")
     .splitEveryNth(3)
     .map(set => {
       const code = set[0]

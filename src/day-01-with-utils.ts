@@ -6,9 +6,7 @@ import "./utils/Array";
 
 // part 1
 const part1 = async (data: string) => {
-  const calories = data
-    .split("\r\n\r\n")
-    .map(a => a.split("\r\n").toNumbers().sum());
+  const calories = data.split("\n\n").map(a => a.split("\n").toNumbers().sum());
 
   return Math.max(...calories);
 };
@@ -16,8 +14,8 @@ const part1 = async (data: string) => {
 // part 2
 const part2 = async (data: string) => {
   return data
-    .split("\r\n\r\n")
-    .map(a => a.split("\r\n").toNumbers().sum())
+    .split("\n\n")
+    .map(a => a.split("\n").toNumbers().sum())
     .sortNumbersDescending()
     .slice(0, 3)
     .sum();

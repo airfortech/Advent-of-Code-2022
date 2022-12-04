@@ -6,7 +6,7 @@ import { title } from "./utils/title";
 // part 1
 const part1 = async (data: string) => {
   const results = data
-    .split("\r\n")
+    .split("\n")
     .map(line => {
       const length = line.length;
       const first = line.slice(0, length / 2);
@@ -29,7 +29,7 @@ const part1 = async (data: string) => {
 
 // part 2
 const part2 = async (data: string) => {
-  const strings = data.split("\r\n");
+  const strings = data.split("\n");
 
   const arr: string[][] = [];
 

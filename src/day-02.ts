@@ -18,7 +18,7 @@ const part1 = async (data: string) => {
   };
 
   return data
-    .split("\r\n")
+    .split("\n")
     .map(a => options[a])
     .reduce((sum, a: number) => sum + a, 0);
 };
@@ -38,7 +38,7 @@ const part2 = async (data: string) => {
   };
 
   return data
-    .split("\r\n")
+    .split("\n")
     .map(a => options[a])
     .reduce((sum, a: number) => sum + a, 0);
 };
