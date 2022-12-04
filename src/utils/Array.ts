@@ -3,6 +3,10 @@ interface Array<T> {
   toNumbers(): number[];
   sortNumbersAscending(): T[];
   sortNumbersDescending(): T[];
+  union(array: any[]): T[];
+  difference(array: any[]): T[];
+  intersection(array: any[]): T[];
+  match(array: any[]): T[];
 }
 
 Array.prototype.sum = function (): number {
@@ -19,4 +23,26 @@ Array.prototype.sortNumbersAscending = function (): number[] {
 
 Array.prototype.sortNumbersDescending = function (): number[] {
   return this.sort((a: number, b: number) => b - a);
+};
+
+Array.prototype.union = function (array: any[]): any[] {
+  let a = new Set(this);
+  let b = new Set(array);
+  return Array.from(new Set([...this, ...b]));
+};
+
+Array.prototype.difference = function (array: any[]): any[] {
+  let a = new Set(this);
+  let b = new Set(array);
+  return Array.from(new Set([...a].filter(x => !b.has(x))));
+};
+
+Array.prototype.intersection = function (array: any[]): any[] {
+  let a = new Set(this);
+  let b = new Set(array);
+  return Array.from(new Set([...a].filter(x => b.has(x))));
+};
+
+Array.prototype.match = function (array: any[]): any[] {
+  return this.every((a: any) => array.includes(a));
 };

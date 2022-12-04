@@ -2,6 +2,7 @@
 
 import { getData } from "./utils/getData";
 import { title } from "./utils/title";
+import { arrayFromRange } from "./utils/arrayFromRange";
 import "./utils/Array";
 
 // part 1
