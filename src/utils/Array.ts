@@ -6,7 +6,8 @@ interface Array<T> {
   union(array: any[]): T[];
   difference(array: any[]): T[];
   intersection(array: any[]): T[];
-  match(array: any[]): T[];
+  match(array: any[]): boolean;
+  splitEveryNth(n: number): T[];
 }
 
 Array.prototype.sum = function (): number {
@@ -43,6 +44,17 @@ Array.prototype.intersection = function (array: any[]): any[] {
   return Array.from(new Set([...a].filter(x => b.has(x))));
 };
 
-Array.prototype.match = function (array: any[]): any[] {
+Array.prototype.match = function (array: any[]): boolean {
   return this.every((a: any) => array.includes(a));
+};
+
+Array.prototype.splitEveryNth = function (n: number): any[] {
+  const arr: string[][] = [];
+
+  for (let i = 0; i < this.length; i++) {
+    if (!arr[Math.floor(i / n)]) arr[Math.floor(i / n)] = [];
+    arr[Math.floor(i / n)].push(this[i]);
+  }
+
+  return arr;
 };
