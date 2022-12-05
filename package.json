@@ -11,7 +11,7 @@
     "start:day-03-with-utils": "ts-node ./src/day-03-with-utils.ts",
     "start:day-04": "ts-node ./src/day-04.ts",
     "start:day-04-with-utils": "ts-node ./src/day-04-with-utils.ts",
-    "start:day-05": "ts-node ./src/day-05.ts",
+    "start:day-05-with-utils": "ts-node ./src/day-05-with-utils.ts",
     "start:day-06": "ts-node ./src/day-06.ts",
     "start:day-07": "ts-node ./src/day-07.ts",
     "start:day-08": "ts-node ./src/day-08.ts",

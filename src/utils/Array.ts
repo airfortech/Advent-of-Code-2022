@@ -8,6 +8,7 @@ interface Array<T> {
   intersection(array: any[]): T[];
   match(array: any[]): boolean;
   splitEveryNth(n: number): T[];
+  rotate(): T[];
 }
 
 Array.prototype.sum = function (): number {
@@ -57,4 +58,8 @@ Array.prototype.splitEveryNth = function (n: number): any[] {
   }
 
   return arr;
+};
+
+Array.prototype.rotate = function (): any[] {
+  return this[0].map((_: any, i: number) => this.map((row: any) => row[i]));
 };
