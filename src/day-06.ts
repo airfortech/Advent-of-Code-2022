@@ -2,12 +2,25 @@
 
 import { getData } from "./utils/getData";
 import { title } from "./utils/title";
+import "./utils/Array";
+
+const findMarker = (string: string, length: number): number => {
+  for (let i = 0; i < string.length; i++) {
+    const word = string.slice(i, i + length);
+    const set = new Set([...word.split("")]);
+    if (set.size === length) return i + length;
+  }
+};
 
 // part 1
-const part1 = async (data: string) => {};
+const part1 = async (data: string) => {
+  return findMarker(data, 4);
+};
 
 // part 2
-const part2 = async (data: string) => {};
+const part2 = async (data: string) => {
+  return findMarker(data, 14);
+};
 
 (async () => {
   const data = await getData("input-day-06.txt");

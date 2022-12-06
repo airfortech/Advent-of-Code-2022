@@ -9,6 +9,9 @@ interface Array<T> {
   match(array: any[]): boolean;
   splitEveryNth(n: number): T[];
   rotate(): T[];
+  rotate2dArray(deg?: 90 | 180 | 270): any[][];
+  normalize2dArray(nullish?: string | 0 | null | undefined): [][];
+  simplify2dArray(nullish?: string | 0 | null | undefined): any;
 }
 
 Array.prototype.sum = function (): number {
@@ -62,4 +65,42 @@ Array.prototype.splitEveryNth = function (n: number): any[] {
 
 Array.prototype.rotate = function (): any[] {
   return this[0].map((_: any, i: number) => this.map((row: any) => row[i]));
+};
+
+Array.prototype.normalize2dArray = function (
+  nullish: string | 0 | null | undefined = null
+): [][] {
+  const lengthY = Math.max(...this.map((a: any) => a.length)) || 0;
+  const lengthX = (this.length as number) || 0;
+  const length = Math.max(lengthX, lengthY);
+
+  for (let i = 0; i < length; i++) {
+    const len = this[i] ? length - this[i].length : length;
+    for (let j = 0; j < len; j++) {
+      if (this[i]) this[i].push(nullish);
+      else this[i] = [nullish];
+    }
+  }
+
+  return this;
+};
+
+Array.prototype.simplify2dArray = function (
+  nullish: string | 0 | null | undefined = null
+): [][] {
+  return this.map((a: []) => a.filter((a: any) => a !== nullish)).filter(
+    (a: []) => a.length > 0
+  );
+};
+
+// in progress
+Array.prototype.rotate2dArray = function (deg: 90 | 180 | 270): any[][] {
+  const arr = Array(this.length)
+    .fill(null)
+    .map((a: null) => Array(this.length).fill(null));
+  for (let i = 0; i < this.length; i++) {
+    for (let j = 0; j < this.length; j++)
+      arr[i][j] = this[this.length - 1 - j][this.length - 1 - i];
+  }
+  return arr;
 };
