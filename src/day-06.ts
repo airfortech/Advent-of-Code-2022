@@ -2,7 +2,6 @@
 
 import { getData } from "./utils/getData";
 import { title } from "./utils/title";
-import "./utils/Array";
 
 const findMarker = (string: string, length: number): number => {
   for (let i = 0; i < string.length; i++) {
