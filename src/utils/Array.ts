@@ -12,6 +12,10 @@ interface Array<T> {
   rotate2dArray(deg?: 90 | 180 | 270): any[][];
   normalize2dArray(nullish?: string | 0 | null | undefined): [][];
   simplify2dArray(nullish?: string | 0 | null | undefined): any;
+  extend2dArray(
+    direction: "left" | "right" | "top" | "bottom",
+    nullish?: any
+  ): any;
 }
 
 Array.prototype.sum = function (): number {
@@ -103,4 +107,16 @@ Array.prototype.rotate2dArray = function (deg: 90 | 180 | 270): any[][] {
       arr[i][j] = this[this.length - 1 - j][this.length - 1 - i];
   }
   return arr;
+};
+
+Array.prototype.extend2dArray = function (
+  direction: "left" | "right" | "top" | "bottom",
+  nullish: any = null
+): any {
+  let arr = this as any[][];
+  if (direction === "right") return arr.map((a: any[]) => [...a, nullish]);
+  if (direction === "left") return arr.map((a: any[]) => [nullish, ...a]);
+  if (direction === "top") return [Array(arr[0].length).fill(nullish), ...arr];
+  if (direction === "bottom")
+    return [...arr, Array(arr[0].length).fill(nullish)];
 };
